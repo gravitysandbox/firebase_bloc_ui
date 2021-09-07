@@ -1,4 +1,5 @@
 import 'package:firebase_bloc_ui/src/bloc/counter_bloc.dart';
+import 'package:firebase_bloc_ui/src/models/counter_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,14 +25,23 @@ class _HomeScreenState extends State<HomeScreen> {
     context.read<CounterBloc>().add(CounterEvent.decrement);
   }
 
+  SnackBar _buildSnackBar(bool wasIncremented) {
+    return SnackBar(
+      content: Text(wasIncremented ? 'Incremented' : 'Decremented'),
+      duration: const Duration(seconds: 1),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: BlocConsumer<CounterBloc, int>(
-        listener: (context, state) {},
+      body: BlocConsumer<CounterBloc, CounterState>(
+        listener: (context, state) {
+          ScaffoldMessenger.of(context).showSnackBar(_buildSnackBar(state.wasIncremented));
+        },
         builder: (context, state) {
           return Center(
             child: Column(
@@ -41,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'You have pushed the button this many times:',
                 ),
                 Text(
-                  '$state',
+                  '${state.value}',
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ],

@@ -9,7 +9,7 @@ import 'package:firebase_bloc_ui/src/domain/repositories/database.dart';
 
 class ReadItems implements UserCase<Either<Failure, void>, NoParams> {
   final ArrayBloc bloc;
-  final Database database;
+  final DatabaseImpl database;
 
   ReadItems({
     required this.bloc,

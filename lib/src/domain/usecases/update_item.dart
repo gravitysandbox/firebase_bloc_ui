@@ -10,7 +10,7 @@ import 'package:firebase_bloc_ui/src/domain/repositories/database.dart';
 
 class UpdateItem implements UserCase<Either<Failure, dynamic>, ArrayItem> {
   final ArrayBloc bloc;
-  final Database database;
+  final DatabaseImpl database;
 
   UpdateItem({
     required this.bloc,

@@ -9,7 +9,7 @@ import 'package:firebase_bloc_ui/src/domain/repositories/database.dart';
 
 class DeleteItem implements UserCase<Either<Failure, dynamic>, String> {
   final ArrayBloc bloc;
-  final Database database;
+  final DatabaseImpl database;
 
   DeleteItem({
     required this.bloc,

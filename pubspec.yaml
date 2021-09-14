@@ -17,6 +17,7 @@ dependencies:
   equatable: ^2.0.3
   get_it: ^7.2.0
   dartz: ^0.10.0
+  connectivity_plus: ^1.1.0
 
   firebase_core: ^1.6.0
   cloud_firestore: ^2.5.2

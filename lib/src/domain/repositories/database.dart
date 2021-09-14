@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_bloc_ui/src/domain/models/array_item.dart';
 import 'package:firebase_bloc_ui/src/domain/models/failure.dart';
 
-class Database {
+class DatabaseImpl {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance
     ..settings = const Settings(persistenceEnabled: false);
 

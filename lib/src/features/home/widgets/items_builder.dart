@@ -1,7 +1,8 @@
 import 'dart:math';
 
-import 'package:firebase_bloc_ui/src/domain/models/array_state.dart';
+import 'package:firebase_bloc_ui/src/domain/models/array_item.dart';
 import 'package:firebase_bloc_ui/src/features/shared/trailing_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ItemsBuilder extends StatelessWidget {
@@ -16,14 +17,23 @@ class ItemsBuilder extends StatelessWidget {
     required this.deleteCallback,
   }) : super(key: key);
 
-  Widget _getCircleAvatar() {
-    return CircleAvatar(
-      radius: 20.0,
-      child: ClipRRect(
+  Widget _getCircleAvatar(String title) {
+    return Container(
+      height: 40.0,
+      width: 40.0,
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        child: Container(
-          color: Color((Random().nextDouble() * 0xFFFFFF).toInt())
-              .withOpacity(1.0),
+        color:
+            Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0),
+      ),
+      child: Center(
+        child: Text(
+          title[0],
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
@@ -63,7 +73,7 @@ class ItemsBuilder extends StatelessWidget {
         return ListTile(
           title: Text(items[index].title),
           subtitle: Text(items[index].subtitle),
-          leading: _getCircleAvatar(),
+          leading: _getCircleAvatar(items[index].title),
           trailing: _getButtonBar(items[index]),
         );
       },

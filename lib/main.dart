@@ -1,5 +1,8 @@
 import 'package:firebase_bloc_ui/src/domain/bloc/array_bloc.dart';
+import 'package:firebase_bloc_ui/src/domain/models/usecase.dart';
+import 'package:firebase_bloc_ui/src/domain/usecases/read_items.dart';
 import 'package:firebase_bloc_ui/src/features/home/screens/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +11,9 @@ import 'locator.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   initLocator();
+  Firebase.initializeApp().then((_) {
+    locator<ReadItems>().call(NoParams());
+  });
   runApp(const MyApp());
 }
 

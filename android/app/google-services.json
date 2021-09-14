@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678698073453",
+    "project_id": "sikirillo-fire-bloc",
+    "storage_bucket": "sikirillo-fire-bloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678698073453:android:4269ccfd6d9f90bbef6e64",
+        "android_client_info": {
+          "package_name": "com.sikirillo.firebase_bloc_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678698073453-ocgh3cumbj42683d4u2tcm85i9rq4p31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP_MJyq_M8NAeTzcHQgf0R-4fq2xg3kWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678698073453-ocgh3cumbj42683d4u2tcm85i9rq4p31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

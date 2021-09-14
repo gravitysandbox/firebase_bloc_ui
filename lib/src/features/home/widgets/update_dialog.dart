@@ -1,5 +1,5 @@
 import 'package:firebase_bloc_ui/src/constants.dart';
-import 'package:firebase_bloc_ui/src/domain/models/array_state.dart';
+import 'package:firebase_bloc_ui/src/domain/models/array_item.dart';
 import 'package:firebase_bloc_ui/src/features/shared/content_wrapper.dart';
 import 'package:firebase_bloc_ui/src/features/shared/input_field.dart';
 import 'package:firebase_bloc_ui/src/features/shared/primary_button.dart';
@@ -20,7 +20,7 @@ class UpdateItemDialog extends StatefulWidget {
 class _UpdateItemDialogState extends State<UpdateItemDialog> {
   late final TextEditingController _titleController;
   late final TextEditingController _subtitleController;
-  bool _isButtonDisabled = true;
+  bool _isButtonDisabled = false;
 
   @override
   void initState() {

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:firebase_bloc_ui/src/domain/models/array_state.dart';
+import 'package:firebase_bloc_ui/src/domain/models/array_item.dart';
 
 enum ArrayEventType {
   create,

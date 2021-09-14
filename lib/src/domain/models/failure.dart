@@ -5,3 +5,10 @@ abstract class Failure extends Equatable {
 
   const Failure(this.message, [List props = const[]]) : super();
 }
+
+class CommonFailure extends Failure {
+  const CommonFailure(String message) : super(message);
+
+  @override
+  List<Object?> get props => throw UnimplementedError();
+}

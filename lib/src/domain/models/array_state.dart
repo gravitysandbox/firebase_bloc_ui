@@ -1,5 +1,7 @@
 import 'package:firebase_bloc_ui/src/domain/events/array_events.dart';
 
+import 'array_item.dart';
+
 class ArrayState {
   final List<ArrayItem> items;
   final ArrayEventType event;
@@ -26,23 +28,5 @@ class ArrayState {
   ArrayState deleteElement(String id) {
     items.removeWhere((item) => item.id == id);
     return ArrayState(items: items, event: ArrayEventType.delete);
-  }
-}
-
-class ArrayItem {
-  final String id, title, subtitle;
-
-  ArrayItem({
-    required this.id,
-    required this.title,
-    required this.subtitle,
-  });
-
-  ArrayItem copyWith({String? title, String? subtitle}) {
-    return ArrayItem(
-      id: id,
-      title: title ?? this.title,
-      subtitle: subtitle ?? this.subtitle,
-    );
   }
 }

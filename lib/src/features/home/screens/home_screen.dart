@@ -2,6 +2,7 @@ import 'package:firebase_bloc_ui/locator.dart';
 import 'package:firebase_bloc_ui/src/constants.dart';
 import 'package:firebase_bloc_ui/src/domain/bloc/array_bloc.dart';
 import 'package:firebase_bloc_ui/src/domain/events/array_events.dart';
+import 'package:firebase_bloc_ui/src/domain/models/array_item.dart';
 import 'package:firebase_bloc_ui/src/domain/models/array_state.dart';
 import 'package:firebase_bloc_ui/src/domain/models/usecase.dart';
 import 'package:firebase_bloc_ui/src/domain/usecases/create_item.dart';
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
   SnackBar _buildSnackBar(ArrayEventType event) {
     final Map<ArrayEventType, String> snackText = {
       ArrayEventType.create: 'Created',
-      ArrayEventType.read: 'Reset',
+      ArrayEventType.read: 'Read',
       ArrayEventType.update: 'Updated',
       ArrayEventType.delete: 'Deleted',
     };
